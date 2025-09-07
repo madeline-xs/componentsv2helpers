@@ -1,6 +1,6 @@
 export function addComponents(
     container: ContainerBuilder,
-    components: Arrayable<ContainableComponent>
+    components: Arrayable<AnyComponentBuilder>
 ) {
     components.forEach((i) => {
         i instanceof ActionRowBuilder ?
@@ -11,4 +11,5 @@ export function addComponents(
         container.addSeparatorComponents(i) : i instanceof TextDisplayBuilder ?
         container.addTextDisplayComponents(i) : {}
     });
+
 }
